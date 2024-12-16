@@ -1,9 +1,28 @@
 # Optimal Foraging in Memory Retrieval: Evaluating Random Walks and Metropolis-Hastings Sampling in Modern Semantic Spaces
 
-Human semantic retrieval processes resemble foraging behaviors observed in ecological settings, where individuals exploit local resource patches before strategically shifting to new areas—a pattern well-explained by the Marginal Value Theorem (MVT). While previous behavioral studies and computational models using traditional semantic networks have revealed foraging-like patterns in human verbal fluency, it remains unclear whether state-of-the-art, high-dimensional semantic embeddings can replicate these behaviors. This knowledge gap persists despite the rapid advancement of embedding models, from classic approaches such as BEAGLE to cutting-edge, large-scale models like OpenAI’s text-embedding-large-3, which capture richer contextual and relational information.
-
-In this study, we systematically evaluate whether random walks on modern embedding spaces more closely emulate human memory retrieval patterns than older, more static semantic networks. We then introduce a Metropolis-Hastings (MH) sampling framework that dynamically incorporates MVT-inspired constraints, using acceptance criteria that balance the exploitation of intra-cluster similarity against exploratory cluster-switching. By enforcing “high order” priors—capturing nuanced semantic relationships and encouraging timely cluster exits—MH provides a more adaptive retrieval process.
-
-To further optimize the embedding space, we generate succinct, descriptive sentences for each animal stimulus via a GPT-4o-mini model, and then embed these descriptions using text-embedding-large-3. This additional context yields more defined cluster structures, enabling the adaptive MH sampler to outperform simpler random walks in replicating human-like retrieval patterns, including more natural inter-response times (IRTs) and cluster transitions. These enhancements challenge Abbott’s (2015) skepticism regarding the adequacy of semantic embeddings and support Hills’ (2012) argument that richer, more contextually informed semantic spaces can indeed facilitate optimal foraging behavior.
-
-Overall, our findings demonstrate that modern embeddings, enriched with descriptive priors and sampled adaptively via MH, can reliably reproduce human semantic foraging patterns. This underscores both the flexibility of embedding-based approaches and their potential to yield deeper insights into human cognitive processes, setting the stage for future explorations in adaptive semantic search, hierarchical sampling, and more human-aligned models of memory retrieval.
+Human memory retrieval often resembles ecological foraging
+where animals search for food in a “patchy” environment. Op-
+timal foraging means strict adherences to the Marginal Value
+Thereom (MVT) in which individuals exploit a “patch” of se-
+mantically related concepts until it becomes less rewarding,
+then switch to a new cluster. While human behavioral data
+suggests foraging-like patterns in semantic fluency tasks, it
+is still unknown whether modern high-dimensional embed-
+ding spaces provide a sufficient representation for algorithms
+to closely match observed human behavior. By leveraging
+state-of-the-art embeddings and prior clustering and human se-
+mantic fluency data I find that random walks on these seman-
+tic embedding spaces produces results consistent with optimal
+foraging and the MVT. Suprisingly, introducing Metroplois-
+Hastings, an adaptive algorithm expected to model strategic
+acceptance and rejection of new clusters, does not produce re-
+sults consistent with observed human behavior. These findings
+challenge the assumption that sophisticated sampling mecha-
+nisms inherently provide better cognitive models of memory
+retrieval. Instead, they highlight that appropriately structured
+semantic embeddings, even with minimalistic sampling ap-
+proaches, can produce near-optimal foraging dynamics. In do-
+ing so, my results support the perspective of Hills (2012) rather
+than Abbott (2015), demonstrating that modern embeddings
+can approximate human memory foraging without relying on
+complex acceptance criteria
